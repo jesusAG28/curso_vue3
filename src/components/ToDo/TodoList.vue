@@ -1,6 +1,6 @@
 <template>
     <h1>Lista de Tareas</h1>
-    <input v-model="newTask" @keyup.enter="addTask" placeholder="Nueva tarea">
+    <input class="add-task" v-model="newTask" @keyup.enter="addTask" placeholder="Nueva tarea">
     <ul>
         <TodoItem v-for="(task, index) in tasks" :key="index" :task="task" :deleteTask="() => deleteTask(index)"
             :toggleTask="() => toggleTask(index)" />
@@ -40,8 +40,19 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-    ul{
-        width: 100%;
-        max-width: 512px;
-    }
+.add-task {
+    width: 100%;
+    max-width: 512px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+
+ul {
+    width: 100%;
+    max-width: 512px;
+    padding: 0;
+}
 </style>

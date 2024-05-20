@@ -5,7 +5,8 @@
     </div>
     <div class="buttons">
       <button class="btn" @click="toggleTask" :class="{ 'btn-complete': !task.completed }">
-        {{ task.completed ? 'Reopen' : 'Complete' }}
+        <Check v-if="!task.completed" />
+        <Reopen v-else />
       </button>
       <button class="btn btn-delete" @click="deleteTask">
         <Trash />
@@ -17,6 +18,8 @@
 <script setup>
 import { ref } from 'vue';
 import Trash from '../Trash.vue';
+import Check from '../Check.vue';
+import Reopen from '../Reopen.vue';
 
 const props = defineProps(['task', 'deleteTask', 'toggleTask']);
 </script>
@@ -36,7 +39,7 @@ const props = defineProps(['task', 'deleteTask', 'toggleTask']);
 
 .btn {
   margin-left: 10px;
-  padding: 5px 10px;
+  padding: 2px 4px;
   border: none;
   border-radius: 5px;
   background-color: #007BFF;
@@ -55,7 +58,6 @@ const props = defineProps(['task', 'deleteTask', 'toggleTask']);
 
 .btn-delete {
   background-color: #ff3434;
-  padding: 2px 4px;
 }
 
 .btn-delete:hover {
@@ -76,6 +78,7 @@ li {
   justify-content: space-between;
   align-items: flex-start;
   border-radius: 5px;
+  margin-bottom: .3rem;
 }
 
 li:hover {
