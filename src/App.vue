@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import TodoList from './components/ToDo/TodoList.vue'
 </script>
 
 <template>
@@ -13,7 +14,8 @@ import TheWelcome from './components/TheWelcome.vue'
   </header>
 
   <main>
-    <TheWelcome />
+    <!-- <TheWelcome /> -->
+    <TodoList />
   </main>
 </template>
 
@@ -25,6 +27,12 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (min-width: 1024px) {
