@@ -45,7 +45,11 @@ const props = defineProps(['task', 'deleteTask', 'toggleTask']);
   text-decoration: none;
 }
 
-.completed .btn{
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.completed .btn {
   text-decoration: none;
 }
 
@@ -54,21 +58,27 @@ const props = defineProps(['task', 'deleteTask', 'toggleTask']);
   padding: 2px 4px;
 }
 
+.btn-delete:hover {
+  background-color: #ff7070;
+}
+
 .btn-complete {
   background-color: #35ae1d;
 }
 
-.btn:hover {
-  background-color: #0056b3;
+.btn-complete:hover {
+  background-color: #91f27d;
 }
+
 
 li {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  border-radius: 5px;
 }
 
-li:hover{
+li:hover {
   background-color: darkcyan;
 }
 </style>
